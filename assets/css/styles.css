@@ -1,3 +1,4 @@
+/* Variables */
 :root {
   --color-black: #000000;
   --color-primary: #34547a;
@@ -23,6 +24,7 @@
   --gap-xl: calc(var(--gap) * 2); /* 40px */
 }
 
+/* Typography */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -54,6 +56,7 @@ a {
   text-decoration: none;
 }
 
+/* Common Classes */
 .container {
   width: min(100% - var(--gap-xl), var(--container-primary));
   margin-inline: auto;
@@ -64,6 +67,22 @@ a {
   margin-inline: auto;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  visibility: hidden; /* Optional for fallback support */
+}
+
+/* Blocks */
 .header {
   background-color: var(--color-gray-light);
   padding-top: 69px;
@@ -76,11 +95,9 @@ a {
 
 .navbar__list {
   display: flex;
+  flex-wrap: wrap;
   gap: 27px;
   margin-left: -0.75em;
-}
-
-.navbar__item {
 }
 
 .navbar__link {
@@ -118,4 +135,97 @@ a {
   background-color: var(--color-primary);
   color: var(--color-white);
   letter-spacing: var(--letter-spacing);
+}
+
+.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+.section__title {
+  margin-bottom: 36px;
+}
+
+.section__description {
+  color: var(--color-secondary);
+}
+
+.about {
+  background-color: var(--color-white);
+}
+
+.experience {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.experience__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+
+.experience__item {
+  display: flex;
+  gap: var(--gap);
+}
+
+.experience__item-picture {
+  order: -1;
+}
+
+.experience__item-image {
+  display: block;
+}
+
+.experience__item-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1;
+}
+
+.experience__item-number {
+  font-size: 1.3125rem;
+  font-weight: 500;
+}
+
+.process {
+  background-color: var(--color-gray-light);
+  padding-bottom: 50px;
+}
+
+.video {
+  background-color: var(--color-gray-light);
+  padding-bottom: 100px;
+}
+
+.video__iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  min-height: 200px;
+}
+
+.footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.footer__title {
+  font-size: 1.3125rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.footer__description {
+  font-size: 0.8125rem;
 }
